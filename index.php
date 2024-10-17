@@ -1,4 +1,4 @@
-<h1>POO Banque</h1>
+<h1>POO Cinema</h1>
    
 
 <?php
