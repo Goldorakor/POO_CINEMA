@@ -84,12 +84,12 @@ class Film {
     }
 
     
-    public function getFilm () : Realisateur
+    public function getRealisateur () : Realisateur
     {
         return $this->_realisateur;
     }
     
-    public function setFilm (string $realisateur)
+    public function setRealisateur (string $realisateur)
     {
         $this->_realisateur = new Realisateur ($realisateur);
         
@@ -109,10 +109,10 @@ class Film {
         return $this;
     }
 
+
     public function addCasting (Casting $casting) {
         $this->_castings[] = $casting; // on remplit le tableau _castings avec un objet '$casting'
     }
-
 
 
     public function afficherCasting () {
@@ -121,13 +121,12 @@ class Film {
             $result .= "<li>".$casting->getPersonnage()->getNomHeros()." a été interprété par ".$casting->getActeur()->getPrenom()." ".$casting->getActeur()->getNom()."</li>";
         }
         $result .= "</ul>";
+        return $result; // si oubli de cette ligne, la méthode n'affiche rien !
     }
-
 
 
     public function __toString () : string {
         return $this->_titre;
     }
-
 
 }

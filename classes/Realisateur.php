@@ -13,13 +13,11 @@ class Realisateur extends Personne {
     }
 
     public function afficherFilmsParRealisateur () {
-        $result = "<h3>Films du réalisateur : $this</h3><ul>";
+        $result = "<h3>Films du réalisateur ".$this->getPrenom()." ".$this->getNom()."</h3><ul>"; //  Films du réalisateur $this fonctionne aussi
         foreach ($this->_films as $film) {
-            $result .= "<li>$film->_titre</li>"; // <li>$film</li> fonctionne grâce à __toString de la classe Film
+            $result .= "<li>".$film->getTitre()."</li>"; // <li>$film</li> fonctionne grâce à __toString de la classe Film
         }
-
         $result .= "</ul>";
-
         return $result;
     }
 

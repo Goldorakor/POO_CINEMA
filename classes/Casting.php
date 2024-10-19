@@ -9,7 +9,7 @@ class Casting {
         $this->_film = $film;
         $this->_personnage = $personnage;
         $this->_acteur = $acteur;
-        $this->_film->addCasting($this);
+        $this->_film->addCasting($this); // on appelle la méthode addCasting de la classe Film pour placer cet objet $casting dans le tableau $castings de l'objet $film (qui est lui-même attribut de cet objet $casting)
         $this->_personnage->addCasting($this);
         $this->_acteur->addCasting($this);
     }
@@ -20,9 +20,9 @@ class Casting {
         return $this->_film;
     }
 
-    public function setFilm ($_film)
+    public function setFilm (Film $film)
     {
-        $this->_film = $_film;
+        $this->_film = $film;
 
         return $this;
     }
@@ -32,9 +32,9 @@ class Casting {
         return $this->_personnage;
     }
 
-    public function setPersonnage ($_personnage)
+    public function setPersonnage (Personnage $personnage)
     {
-        $this->_personnage = $_personnage;
+        $this->_personnage = $personnage;
 
         return $this;
     }
@@ -44,7 +44,7 @@ class Casting {
         return $this->_acteur;
     }
 
-    public function setActeur ($acteur)
+    public function setActeur (Acteur $acteur)
     {
         $this->_acteur = $acteur;
 

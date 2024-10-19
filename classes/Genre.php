@@ -44,11 +44,9 @@ class Genre {
     public function afficherFilmsParGenre () {
         $result = "<h3>Films du genre : $this</h3><ul>";
         foreach ($this->_films as $film) {
-            $result .= "<li>$film->_titre</li>"; // <li>$film</li> fonctionne grâce à __toString de la classe Film
+            $result .= "<li>".$film->getTitre()."</li>"; // <li>$film</li> fonctionne grâce à __toString de la classe Film
         }
-
         $result .= "</ul>";
-
         return $result;
     }
 
@@ -56,4 +54,5 @@ class Genre {
     public function __toString () : string {
         return $this->_genre;
     }
+    
 }

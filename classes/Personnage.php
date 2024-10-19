@@ -1,6 +1,6 @@
 <?php
 
-class Film {
+class Personnage {
     private string $_nomHeros;
     private array $_castings;
 
@@ -45,15 +45,15 @@ class Film {
     public function afficherListeActeurs () {
         $result = "<h3>Liste des acteurs ayant interprété  ".$this->_nomHeros." au cinéma</h3><ul>"; // $this->prenom héritée de la classe Personne
         foreach ($this->_castings as $casting) {
-            $result .= "<li>".$casting->getActeur()->getPrenom()."</li>";
+            $result .= "<li>".$casting->getActeur()->getPrenom()." ".$casting->getActeur()->getNom()." dans le film ".$casting->getFilm()->getTitre()."</li>";
         }
         $result .= "</ul>";
+        return $result;
     }
 
 
     public function __toString () : string {
         return $this->_nomHeros;
     }
-
-
+    
 }

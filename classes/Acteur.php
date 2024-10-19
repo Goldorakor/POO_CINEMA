@@ -27,13 +27,13 @@ class Acteur extends Personne {
 
 
     public function afficherFilmographie () {
-        $result = "<h3>Filmographie de ".$this->prenom." ".$this->nom."</h3><ul>"; // $this->prenom héritée de la classe Personne
+        $result = "<h3>Filmographie de l'acteur ".$this->getPrenom()." ".$this->getNom()."</h3><ul>"; // $this->_prenom ne fonctionnera pas car mes attributs sont en private et non en protected !
         foreach ($this->_castings as $casting) {
             $result .= "<li>".$casting->getFilm ()->getTitre ()."</li>";
         }
         $result .= "</ul>";
+        return $result;
     }
-
 
 }
 

@@ -66,4 +66,5 @@ class Personne {
     public function __toString () : string {
         return $this->_prenom." ".$this->_nom;
     }
+    
 }
